@@ -4,9 +4,21 @@
     src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
   />
 </div>
+<div>
+  <div class="courses">
+    @for(course of courses; track course.id){
 
-<div class="courses">
-  <course-card [course]="coreCourse"></course-card>
-  <course-card [course]="rxjsCourse"></course-card>
-  <course-card [course]="ngrxCourse"></course-card>
+    <course-card
+      (courseSelected)="onCourseSelected($event)"
+      [course]="course"
+      [index]="$index"
+      [class.is-first]="$first"
+      [class.is-last]="$last"
+      [class.is-odd]="$odd"
+      [class.is-even]="$even"
+    />
+    } @empty {
+    <h1>No Courses found</h1>
+    }
+  </div>
 </div>
