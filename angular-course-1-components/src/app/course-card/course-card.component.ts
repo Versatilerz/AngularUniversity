@@ -12,7 +12,7 @@ export class CourseCardComponent {
   // @Input() title: string;
   // @Input() img: string;
   @Input({ required: true }) course: Course;
-  @Input({ required: true }) index: number;
+  @Input() index: number;
 
   @Output() courseSelected = new EventEmitter<Course>();
 

@@ -5,20 +5,25 @@
   />
 </div>
 <div>
-  <div class="demo">
+  <!-- <div class="demo">
     <div>{{ startDate | date : "dd-MMM-yyyy" }}</div>
     <div>{{ title | titlecase }}</div>
     <div>{{ price | currency : "EUR" }}</div>
     <div>{{ rate | percent }}</div>
-  </div>
+  </div> -->
 
   <!-- {{ courses | json }} -->
-  @for(pair of course | keyvalue; track pair.$index){
+  <!-- @for(pair of course | keyvalue; track pair.$index){
   <div>{{ pair.key + ": " + pair.value }}</div>
-  }
+  } -->
 
+  <!-- <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[0]"
+  /> -->
+  <button (click)="onCoursesEdited()">Edit Courses</button>
   <div class="courses">
-    @for(course of courses | slice:0:2; track course.id ){
+    @for(course of courses; track course.id ){
 
     <course-card
       (courseSelected)="onCourseSelected($event)"
