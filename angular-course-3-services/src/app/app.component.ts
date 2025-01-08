@@ -12,7 +12,7 @@ import { Course } from "./model/course";
 import { CourseCardComponent } from "./course-card/course-card.component";
 import { HighlightedDirective } from "./directives/highlighted.directive";
 import { Observable } from "rxjs";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 
 @Component({
   selector: "app-root",
@@ -21,11 +21,12 @@ import { HttpClient } from "@angular/common/http";
   standalone: false,
 })
 export class AppComponent implements OnInit {
-  courses;
+  courses$: Observable<Course[]>;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get("/api/courses").subscribe((value) => (this.courses = value));
+    const params = new HttpParams().set("page", "1").set("pageSize", "10");
+    this.courses$ = this.http.get<Course[]>("/api/courses", { params });
   }
 }
