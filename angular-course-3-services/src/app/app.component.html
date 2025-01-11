@@ -8,7 +8,7 @@
 <div>
   <div class="courses">
     <course-card
-      *ngFor="let course of courses"
+      *ngFor="let course of courses$ | async"
       [course]="course"
       (courseChanged)="save($event)"
     >

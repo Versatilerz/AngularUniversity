@@ -22,13 +22,13 @@ import { CoursesService } from "./services/courses.service";
   standalone: false,
 })
 export class AppComponent implements OnInit {
-  // courses$: Observable<Course[]>;
-  courses = COURSES;
+  courses$: Observable<Course[]>;
+  // courses = COURSES;
 
   constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
-    // this.courses$ = this.coursesService.loadCourses();
+    this.courses$ = this.coursesService.loadCourses();
   }
 
   save(course: Course) {
