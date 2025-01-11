@@ -11,8 +11,9 @@ import {
   QueryList,
   ViewEncapsulation,
 } from "@angular/core";
-import { Course } from "../model/course";
+
 import { CourseImageComponent } from "../course-image/course-image.component";
+import { Course } from "src/app/model/course";
 
 @Component({
   selector: "course-card",
