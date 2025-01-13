@@ -8,14 +8,11 @@ import { NgxUnlessDirective } from "./directives/ngx-unless.directive";
 import { FilterByCategoryPipe } from "./filter-by-category.pipe";
 
 @NgModule({
-  declarations: [
-    CourseCardComponent,
-    CourseImageComponent,
-    HighlightedDirective,
-    NgxUnlessDirective,
-  ],
-  imports: [CommonModule, FilterByCategoryPipe],
-  exports: [CourseCardComponent, CourseImageComponent, FilterByCategoryPipe],
-  providers: [CoursesService],
+    imports: [CommonModule, FilterByCategoryPipe, CourseCardComponent,
+        CourseImageComponent,
+        HighlightedDirective,
+        NgxUnlessDirective],
+    exports: [CourseCardComponent, CourseImageComponent, FilterByCategoryPipe],
+    providers: [CoursesService],
 })
 export class CoursesModule {}

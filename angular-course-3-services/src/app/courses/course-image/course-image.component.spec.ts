@@ -8,8 +8,8 @@ describe("CourseImageComponent", () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CourseImageComponent],
-    }).compileComponents();
+    imports: [CourseImageComponent],
+}).compileComponents();
   }));
 
   beforeEach(() => {

@@ -8,9 +8,8 @@ import {
 } from "@angular/core";
 
 @Directive({
-  selector: "[highlighted]",
-  exportAs: "hl",
-  standalone: false,
+    selector: "[highlighted]",
+    exportAs: "hl",
 })
 export class HighlightedDirective {
   @Input("highlighted")

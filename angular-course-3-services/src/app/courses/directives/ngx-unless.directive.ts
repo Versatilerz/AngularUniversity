@@ -1,9 +1,6 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from "@angular/core";
 
-@Directive({
-  selector: "[ngxUnless]",
-  standalone: false,
-})
+@Directive({ selector: "[ngxUnless]", })
 export class NgxUnlessDirective {
   visible = false;
 

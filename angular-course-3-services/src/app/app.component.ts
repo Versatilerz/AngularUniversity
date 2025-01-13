@@ -16,12 +16,21 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { CoursesService } from "./courses/courses.service";
 import { createCustomElement } from "@angular/elements";
 import { CourseTitleComponent } from "./course-title/course-title.component";
+import { NgFor } from "@angular/common";
+import { CourseCardComponent } from "./courses/course-card/course-card.component";
+import { CourseImageComponent } from "./courses/course-image/course-image.component";
+import { FilterByCategoryPipe } from "./courses/filter-by-category.pipe";
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
-  standalone: false,
+    selector: "app-root",
+    templateUrl: "./app.component.html",
+    styleUrls: ["./app.component.css"],
+    imports: [
+        NgFor,
+        CourseCardComponent,
+        CourseImageComponent,
+        FilterByCategoryPipe,
+    ],
 })
 export class AppComponent implements OnInit {
   // courses$: Observable<Course[]>;

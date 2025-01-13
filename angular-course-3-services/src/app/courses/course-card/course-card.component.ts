@@ -14,12 +14,17 @@ import {
 
 import { CourseImageComponent } from "../course-image/course-image.component";
 import { Course } from "src/app/model/course";
+import { NgIf, NgSwitch, NgSwitchCase } from "@angular/common";
 
 @Component({
-  selector: "course-card",
-  templateUrl: "./course-card.component.html",
-  styleUrls: ["./course-card.component.css"],
-  standalone: false,
+    selector: "course-card",
+    templateUrl: "./course-card.component.html",
+    styleUrls: ["./course-card.component.css"],
+    imports: [
+        NgIf,
+        NgSwitch,
+        NgSwitchCase,
+    ],
 })
 export class CourseCardComponent implements OnInit {
   @Input()
